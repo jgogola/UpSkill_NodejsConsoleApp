@@ -3,24 +3,7 @@
 console.log('Hello world');
 
 
-/*
- * Array syntax exercises. 
- * Use of ES6 functions. 
- */
 
-// Array of numbers to be used in exercies.
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-
-// Map function to clone the numbers array into the doulbed array, but with each element value multiplied by 2:
-const doubled = numbers.map(number => number * 2);
-console.log(doubled);
-
-
-// Reduce function to calculate the total sum of the numbers array values:
-// Note: The first param is the "accumulator" variable.
-const sum = numbers.reduce((total, currentValue) => { return total + currentValue },0);
-console.log(sum);
 
 
 
@@ -33,7 +16,34 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question('Press Enter to continue...', () => {
-    console.log('Resuming program...');
+rl.question('Please enter a command to run:', (cmd) => {
+
+    if (cmd === 'array') arrayExercise();
+
+
+    console.log('Exiting app.')
     rl.close();
 });
+
+
+
+// Run with command: array
+function arrayExercise() {
+    const af = require('./array-functions');
+
+    console.log('Initial numbers array: ', af.numbers);
+    af.mapNumbersToDouble();
+    af.reduceNumbersToSum();
+    af.filterNumbersGreaterThen5();
+    af.spreadMathMax([20,21,'A',35]);
+
+    if (af.someCheckForHasEvenNumbers) {
+        console.log('Even numbers exist.');
+    } else {
+        console.log('No even numbers exist.');
+    }
+
+
+}
+
+
