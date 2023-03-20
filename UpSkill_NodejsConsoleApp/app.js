@@ -1,10 +1,5 @@
 'use strict';
 
-console.log('Hello world');
-
-
-
-
 
 
 
@@ -24,6 +19,9 @@ rl.question('Please enter a command to run:', (cmd) => {
             break;
         case 'student':
             runStudentClass();
+            break;
+        case 'logic':
+            runLogicExercies();
             break;
         case 'help':
             runHelp();
@@ -61,6 +59,8 @@ function runArrayExercise() {
         console.log('No even numbers exist.');
     }
 
+    af.joinArrayValues();
+
 
 }
 
@@ -85,6 +85,26 @@ function runStudentClass() {
     const { name, age, gender, major, gpa, classes } = student;
     console.log(`* Destructured example: Student Name=${name}, GPA=${gpa}.`);
     
+}
+
+
+function runLogicExercies() {
+    const le = require('./logic-exercises');
+
+    // Array of numbers to be used in exercies.
+    const numbers2 = [1, 1, 3, 4, 4, 6, 6, 6, 7];
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const grades = [100, 90, 80];
+
+    le.findLonelyNumbers(numbers2);
+
+    
+    
+    le.sumEvenNumbersInArray(numbers);
+
+
+    
+    le.findMinMaxAvgGrade(grades);
 }
 
 

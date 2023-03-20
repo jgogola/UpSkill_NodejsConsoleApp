@@ -53,12 +53,20 @@ function spreadMathMax(moreNumbers = [11, 12, 13]) { // Default param value.
 }
 
 
+function joinArrayValues() {
+    const fruits = ['Apple', 'Pear', 'Orange'];
+    console.log(fruits.join(','));
+}
+
+
+
 module.exports = {
     numbers: numbers,
     mapNumbersToDouble: mapNumbersToDouble,
     reduceNumbersToSum: reduceNumbersToSum,
     filterNumbersGreaterThen5: filterNumbersGreaterThen5,
     someCheckForHasEvenNumbers: someCheckForHasEvenNumbers,
-    spreadMathMax: spreadMathMax
+    spreadMathMax: spreadMathMax,
+    joinArrayValues: joinArrayValues
 };
 
